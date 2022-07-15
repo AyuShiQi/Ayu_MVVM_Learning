@@ -5,7 +5,7 @@ import Exception from './ayu-exception';
 /**
  * MVVM框架
  */
-const ayu = class Ayu {
+export default class Ayu {
     private static id: number = 0;
     /**
      * 存储所有Ayu对象
@@ -143,8 +143,4 @@ const ayu = class Ayu {
         }
     }
 }
-
-Object.defineProperty(window,'Ayu',{
-    value: ayu
-});
 
