@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/ayu.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>Ayu使用DEMO</h1>
+        <div class="partBlock">
+            <h3>插值语法的使用</h3>
+            <p>你好，我叫{{name}}。初次见面请多多指教</p>
+            <p>我今年{{age}}岁,明年我就{{age+1}}岁了</p>
+            <p>我的爱好有{{`${hobby.sports}、${hobby.other}`}}</p>
+            <p>今日天气{{lookClimate()}}</p>
+        </div>
+        <div>
+            <h3>指令语法的使用</h3>
+            v-bind使用：<a :href="href">绑定超链接跳转地址</a>
+            <br>
+            v-model修改姓名：
+            <input type="text" v-model="name">
+            <br>
+            v-lazy修改天气温度：
+            <input type="text" v-lazy="tempture">
+            <br>
+            <p v-text="'v-text插入信息'+'你可以添加很多'"></p>
+            <p v-html="aHTML"></p>
+            <button @click="sayHi">点击说你好</button>
+        </div>
+    </div>
+    <script>
+        const vm = new Ayu({
+            el: '#root',
+            data: {
+                name: '小杨',
+                age: 19,
+                gender: '女', 
+                hobby: {
+                    sports: '羽毛球',
+                    other: '睡觉'
+                },
+                href: 'https://gitee.com/Everglow_030209/ayu',
+                aHTML: '<p style="color: pink;">v-html插入</p>',
+                tempture: 25
+            },
+            methods: {
+                sayHi(){
+                    alert('你好,我是'+this.name);
+                },
+                lookClimate(){
+                    if(this.tempture<=28){
+                        return '不错，'+this.tempture+'度';
+                    }
+                    else {
+                        return '太热了，'+this.tempture+'度';
+                    }
+                }
+            },
+            created(){
+                alert('我是created');
+            },
+            mounted() {
+                alert('我是mounted');
+            },
+        });
+    </script>
+</body>  
+</html>
