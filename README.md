@@ -10,7 +10,7 @@
 
 #### 设计架构
 
-![](D:\前端\百度前端训练营\homework\ending-homework\images\Snipaste_2022-07-13_21-59-41.png)
+![](images\Snipaste_2022-07-13_21-59-41.png)
 
 
 
