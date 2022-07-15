@@ -31,9 +31,8 @@
 ​	你可以直接在html文件中引入ayu.js进行使用
 
 ```html
-<script src='path/ayu.js'></script>
+<script src='js/ayu.js'></script>
 ```
-
 
 
 #### 2.es6模块化开发
@@ -43,11 +42,11 @@
 引入方式：
 
 ```javascript
-import Ayu from 'path/Ayu/ayu.js'   //js开发版本
+import Ayu from 'js/Ayu/ayu.js'   //js开发版本
 ```
 
 ```javascript
-import Ayu from 'path/Ayu/ayu.ts'   //ts开发版本
+import Ayu from 'ts/Ayu/ayu.ts'   //ts开发版本
 ```
 
 
