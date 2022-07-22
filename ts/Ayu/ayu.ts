@@ -41,11 +41,12 @@ export default class Ayu {
         this.proxy();
         //数据劫持
         new Observer(this.$data);
+        config.created && (config.created.bind(this))();
 
-        config.created && config.created();
+        
         //模板编译
         new Compiler(this);
-        config.mounted && config.mounted();
+        config.mounted && (config.mounted.bind(this))();
     }
 
 
@@ -143,4 +144,3 @@ export default class Ayu {
         }
     }
 }
-

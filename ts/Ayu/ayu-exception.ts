@@ -1,9 +1,7 @@
 /**
  * 异常信息
  */
-export default class Exception {
-    private constructor(){}
-    
+export default class Exception {    
     /**
      * 插值语法空值警告
      */

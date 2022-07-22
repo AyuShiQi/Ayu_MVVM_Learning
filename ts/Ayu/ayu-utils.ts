@@ -2,8 +2,6 @@
  * 工具类
  */
 export default class Utils {
-    private constructor(){}
-
     /**
      * 删除HTML一段字符串中的回车
      * @param str 

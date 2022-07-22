@@ -9,14 +9,16 @@ export default class Observer {
     * @param {*} data AyuVM.$data
     */
    constructor(data: any){
-       this.ensureData(data);
-       this.deepObserve(data);
+       this.ensureData(data) && this.deepObserve(data);
    }
 
    ensureData(data: any){
         if(typeof data != 'object'){
             Exception.dataTypeError();
+            return false;
         }
+
+        return true;
    }
    /**
     * 数据的深度劫持
